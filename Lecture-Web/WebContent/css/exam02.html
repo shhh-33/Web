@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style> 
+   p,h3 {
+     color :red  
+    }
+    
+     /*클래스.  : , 여러개 선택
+           아이디 #  :  유일
+           
+        
+     선택범위 좁은것이  우선순위 더 높음  : 아이디>클래스
+     
+     
+     
+              
+     */
+   .c01{
+      color : olive
+   }
+   
+   h3.c02{
+      color  :aqua
+     }
+  
+
+  #id01{
+    background-color : navy
+  }
+  
+  #id02{
+    background-color : purple
+  }
+  
+  
+   .c03{
+      background-color : maroon
+     }
+   .c04{
+      color : blue;
+      background-color : maroon;
+     }
+
+
+
+    
+</style>
+
+
+
+</head>
+<body>
+
+<p class = "c01"> 안녕하세요 </p>
+<div class ="c02">
+     안녕하세요
+</div>
+
+<h3 id="id01">안녕하세요</h3>
+
+<p id="id01" > 안녕하세요 </p>
+
+<div class="c01">
+     안녕하세요
+</div>
+
+<h3 class ="c02">안녕하세요</h3>
+
+<p class="c01 c03"> 안녕하세요 </p>
+
+
+
+<p class="c01" id="id02"> 안녕하세요 </p>
+
+
+
+
+
+
+
+</body>
+</html>

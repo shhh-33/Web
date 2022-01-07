@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload =function(){
+	alert(' innerHTML:' + document.body.innerHTML)//<body>안 글자 추출
+	alert(' innerText:' + document.body.innerText) //<body>안 글자 추출
+	
+	let tags =''
+	    tags += '<ul>'
+	    tags += '    <li>red</li>'
+	    tags += '    <li>green</li>'
+	    tags += '    <li>blue</li>'
+	    tags += '</ul>'                           
+	    
+	   // document.body.innerHTML =tags  //교체했음 //실제 html태그로 인식하겠다
+	   // document.body.innerText =tags  //일반 text로 인식해서 그냥 문자형태로 나옴
+	    
+	    document.body.innerHTML+=tags
+}
+
+</script>
+
+
+</head>
+<body>
+ <h1> 안녕하세요</h1>
+ hello
+</body>
+</html>

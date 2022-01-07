@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//내부적으로 arguments 가지고 있고 ,날아오는 인자 배열형태로 return
+	//func(a,b) 
+	function func(a, b) {
+		console.log(arguments.length, arguments[0], arguments[1])
+		console.log(a, b)
+	}
+
+	//매개변수와 상관없이 그냥 func만 호출된다.
+	func() ///인자가 없으니까 length가 0
+	func('hello')
+	func(10, 20)
+	
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

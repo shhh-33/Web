@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//반환형 없음 ->변수가 var형이라
+	function test() {
+		alert('call..')
+	}
+
+	//이름 같으면 아래것만 인식함 => 함수이름 다르게 해야
+	function test2(data) {
+		alert('data : ' + data)
+
+	}
+
+	function test3(data, data2) {
+		alert(`data : ${data} , data2 : ${data2}`)
+
+	}
+
+	//선언적 함수
+	function sum(a, b) {
+		return a + b
+	}
+
+	var temp = function func() {
+		alert('call func()')
+	}
+
+	
+
+	//함수이름 필요없어서 안적음 => 익명함수 (함수표현식)
+	var func01 = function() {
+		alert('call func()')
+	}
+
+	
+
+	//
+
+	var aaa = function() {
+		alert('익명함수 aaa호출')
+	}
+
+	function aaa() {
+		alert('선언적 함수 aaa호출')
+	}
+ 
+	//f: 함수를 변수로 넘겨받은 값  -> f함수를 실행한다
+	function callbackF(f){
+		f()
+	}
+	
+/// 함수 호출 ///
+	
+	//함수도 변수화 되어서 매개변수로 넘겨서 실행가능 
+	callbackF(function(){
+	  alert('익명함수 호출..')
+    })
+	 
+	callbackF(test)
+	callbackF(temp)
+	
+	aaa()
+	
+	temp()
+	
+	func01()
+	
+	
+
+	let total = sum(10, 20)
+	alert('총합 :' + total)
+
+	test()
+	test2(10)
+	test3(4, 9)
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    
+ let names = ['홍길동','박길동','윤','강','현']
+
+ document.write('<방법1> <br>')
+ 
+ for(let i =0; i < names.length;i++){
+ document.write(names[i]+ '<br>') 
+ }
+ 
+ 
+ document.write('<방법2><br>')
+ //위의 for 대체 
+ for(let i in names){
+	 document.write(names[i] +'<br>')
+ }
+ 
+ document.write('<h1>방법3</h1>')
+ for(let name of names){
+	 document.write(name +'<br>')	 
+ }
+ 
+ document.write('<h1>방법4</h1>')
+ names.forEach(function(element,index,names){
+	 document.write(element +'<br>')
+	 //console.log(names)
+	 
+ })
+ 
+ names.sort()
+ 
+ document.write('<h1>정렬데이터</h1>')
+ names.forEach(function(element,index,names){
+	 document.write(element +'<br>')
+	 //console.log(names)
+	 
+ })
+ 
+ 
+ 
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

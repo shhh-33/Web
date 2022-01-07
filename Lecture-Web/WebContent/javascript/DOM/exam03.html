@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+table {
+	width: 300px;
+	height: 400px;
+}
+</style>
+<script>
+//document.getElementsByTagName() 콘솔창..<body>안의 특정태그가 여러개=>리턴값 배열 
+
+
+	window.onload = function() {
+		
+	let tags = document.getElementsByTagName('td')
+    tags[0].innerText ='아이디 '
+    tags[1].innerHTML ='패스워드 '
+	}
+	
+	
+ </script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>Id</td> 
+		</tr>
+		<tr>
+			<td>Password</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

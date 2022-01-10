@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MethodServlet extends HttpServlet {
     
-	// http://localhost:9999/Lecture-Web/method?id=aaa
+	// http://localhost:9999/Lecture-Web/method?id=aaa&password=bbb
 	@Override   
 	                                         //요청 변수                                응답변수
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 	
-	  String method =	request.getMethod();
+	  String method =request.getMethod();
       String uri = request.getRequestURI(); //9999~이후것들만 가져오는것
       String id =request.getParameter("id");
-      
+       
       
       
       response.setContentType("text/html; charset=utf-8");
@@ -35,10 +35,13 @@ public class MethodServlet extends HttpServlet {
       out.println("&nbsp;&nbsp;&nbsp; 출 력 결 과<br>");
       out.println("요청 메소드 :"+ method+ "<br>");
       out.println("요청 URI :"+ uri+ "<br>");
-      out.println("파라미터(id)" + id+ "<br>");
+      out.println("파라미터(id) : " + id+ "<br>");
       out.println("===============================<br>");
       out.println("   </BODY>"); 
       out.println("</HTML>"); 
+      
+      out.flush();
+      out.close();
       
       /*
       System.out.println("요청 메소드 : " +method);
@@ -47,4 +50,22 @@ public class MethodServlet extends HttpServlet {
 	  */
 	  
 	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		 request.setCharacterEncoding("utf-8");
+		
+		  String method =request.getMethod();
+	      String uri = request.getRequestURI(); 
+	      String id =request.getParameter("id");
+	      
+	      System.out.println("요청 메소드 : " +method);
+	      System.out.println("요청 URI : " +uri);
+	      System.out.println("id : " +id);
+	}
 }
+
+
+

@@ -30,6 +30,9 @@ public class ExamMethodServlet extends HttpServlet{
 		 System.out.println("name : " + name);
 		 System.out.println("hobby : " +Arrays.toString(hobby));
 		 
+		 
+		 
+		 
 		//System.out.println("/examMethod service()...");
 	}
 

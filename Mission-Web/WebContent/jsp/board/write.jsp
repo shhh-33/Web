@@ -1,3 +1,5 @@
+<%@page import="kr.co.mlec.board.vo.BoardVO"%>
+<%@page import="kr.co.mlec.board.dao.BoardDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="kr.co.mlec.util.ConnectionFactory"%>
@@ -19,20 +21,19 @@
 	String writer = request.getParameter("writer");
 	String content = request.getParameter("content");
 
-	System.out.println("title : " + title);
-	System.out.println("writer : " + writer);
-	System.out.println("content : " + content);
-
+	
+	BoardVO board = new BoardVO();// 위의 string객체들 넣어줌
+	//데이터 집어넣을땐 setter 가져올땐 getter
+	board.setTitle(title);
+	board.setWriter(writer);
+	board.setContent(content);
+	
 	//데이터베이스 tbl_board 테이블에 새글등록
-	Connection conn = new ConnectionFactory().getConnection();
-	StringBuilder sql = new StringBuilder();
-	sql.append("insert into tbl_board(no, title, writer, content) ");
-	sql.append(" values(seq_tbl_board_no.nextval, ?, ?, ?) ");
-	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-	pstmt.setString(1, title);
-	pstmt.setString(2, writer);
-	pstmt.setString(3, content);
-	pstmt.executeUpdate();
+	BoardDAO dao = new BoardDAO();
+	dao.insertBoard(board);//  set으로 가져온거 board 매개변수로 넣어서 dao의 insertBoard호출
+	
+	
+	
 %>
 
 <script>

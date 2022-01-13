@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+ <form action ="forwardSet.jsp">
+   id : <input type ="text" name ="id">
+   <input type ="submit" value="전송 ">
+ </form>
 
 </body>
 </html>

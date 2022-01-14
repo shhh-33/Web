@@ -18,6 +18,8 @@
    <section>
       body부분   
    </section>    
+   
+   
    <footer>
       <%@ include file="/jsp/include/footer.jsp" %>
    </footer>   

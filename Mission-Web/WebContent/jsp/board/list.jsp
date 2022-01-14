@@ -24,6 +24,19 @@
 	function goWriteForm() {
 		location.href = "writeForm.jsp"
 	}
+	
+	function doAction(boardNo) {
+		<c:choose>
+			<c:when test="${ not empty userVO}">
+				location.href = "detail.jsp?no=" + boardNo
+			</c:when>
+			<c:otherwise>
+				if(confirm('로그인서비스가 필요합니다\n로그인페이지로 이동하시겠습니까?')){
+					location.href = '/Mission-Web/jsp/login/loginForm.jsp'
+				}
+			</c:otherwise>
+		</c:choose>
+	}
 </script>
 </head>
 <body>
@@ -48,9 +61,12 @@
 				<tr>
 					<td>${ board.no }</td>
 					<td>
-						<a href="detail.jsp?no=${ board.no }">
+						<a href="javascript:doAction(${ board.no })">
 							<c:out value="${ board.title }" />
 						</a>
+						<%-- <a href="detail.jsp?no=${ board.no }">
+							<c:out value="${ board.title }" />
+						</a> --%>
 					</td>
 					<td>${ board.writer }</td>
 					<td>${ board.regDate }</td>
@@ -59,7 +75,9 @@
 			
 		</table>
 		<br>
-		<button onclick="goWriteForm()">새글등록</button>
+		<c:if test="${ not empty userVO }">
+			<button onclick="goWriteForm()">새글등록</button>
+		</c:if>
 	</div>
 	</section>
 	<footer>

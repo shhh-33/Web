@@ -28,7 +28,7 @@
 	  /* 	let data =[1,2,3,4]
 	  	data.forEach() */
 	  	
-	  	//p태그 개수만큼 콜백 함수 호출
+	  	//p태그 개수만큼 함수 호출
 	  	$('p').html(function(index,element){
 	  	 console.log(index,element)
 	  		 return index + ' :<strong>문장변환 </strong>'

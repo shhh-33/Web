@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import kr.co.mlec.board.controller.BoardListController;
+
 public class HandlerMapping {
 
 	private Map<String, Controller> mappings = null;
@@ -72,7 +74,6 @@ public class HandlerMapping {
 		 */
 		//BoardListController obj = new BoardListController(); 를 클래스 이름알아서 동적으로 한거
 		Class<?> clz = Class.forName("kr.co.mlec.controller.BoardListController");
-		
 		BoardListController obj = (BoardListController)clz.newInstance();
 		//System.out.println(obj.handleRequest(request, response));
 		
